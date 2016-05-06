@@ -1,0 +1,65 @@
+<?php
+	include $_SERVER['DOCUMENT_ROOT'].'/mboc/admin/authentication.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/mboc/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/mboc/admin/utility/functions.php';
+	$c = connect_to_database();
+	$id = $_POST['id'];
+	$name = addslashes($_POST['name']);
+	$email = addslashes($_POST['email']);
+	$phone = addslashes($_POST['phone']);
+	$weekday_open_hour = addslashes($_POST['weekday_open_hour']);
+	$weekday_close_hour = addslashes($_POST['weekday_close_hour']);
+	$saturday_open_hour = addslashes($_POST['saturday_open_hour']);
+	$saturday_close_hour = addslashes($_POST['saturday_close_hour']);
+	$sunday_open_hour = addslashes($_POST['sunday_open_hour']);
+	$sunday_close_hour = addslashes($_POST['sunday_close_hour']);
+	$order_index = addslashes($_POST['order_index']);
+	
+	$filenames = array();
+	$target_dir = "../../images/application/";
+	$i = 0;
+	$file_array = reArrayFiles($_FILES['file']);
+	foreach($file_array as $file) {
+        $extension = getExtension(stripslashes($file['name']));
+        $extension = strtolower($extension);
+		$filename = $i . date("YmdHis") . "department." . $extension;
+		$target_file = $target_dir . $filename;
+		$uploadOk = 1;
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		// Check if image file is a actual image or fake image
+		$check = getimagesize($file["tmp_name"]);
+		if($check !== false) {
+			//echo "File is an image - " . $check["mime"] . ".<br />";
+			$uploadOk = 1;
+		} else {
+			//echo "File is not an image.<br />";
+			$uploadOk = 0;
+		}
+
+		if ($uploadOk == 0) {
+			//echo "There was a problem with the file.";
+		} else {
+			if (move_uploaded_file($file["tmp_name"], $target_file)) { 
+				$filenames[$i] = "/images/application/" . $filename;
+				//echo "File uploaded.<br />"; 
+			} else { }
+		}
+		
+		$i++;
+	}
+	
+	if($id == "") {
+		if(mysqli_query($c, "insert into departments(name, email, phone, weekday_open_hour, weekday_close_hour, saturday_open_hour, saturday_close_hour, sunday_open_hour, sunday_close_hour, order_index)  
+						values('$name', '$email', '$phone', '$weekday_open_hour', '$weekday_close_hour', '$saturday_open_hour', '$saturday_close_hour', '$sunday_open_hour', '$sunday_close_hour', '$order_index')")){
+			header("Location: index.php");
+		}else{ 
+			echo '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/error.png" style="height:20px;" />&nbsp;&nbsp;Database problem.<br>Contact wavelinkllc.com administrator.'.mysqli_error($c);
+		}
+	} else {
+		if(mysqli_query($c, "update departments set name = '$name', email = '$email', phone = '$phone', weekday_open_hour = '$weekday_open_hour', weekday_close_hour = '$weekday_close_hour', saturday_open_hour = '$saturday_open_hour', saturday_close_hour = '$saturday_close_hour', sunday_open_hour = '$sunday_open_hour', sunday_close_hour = '$sunday_close_hour', order_index = '$order_index' where id = '$id'")){
+			header("Location: index.php");
+		}else{ 
+			echo '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/error.png" style="height:20px;" />&nbsp;&nbsp;Database problem.<br>Contact wavelinkllc.com administrator.';
+		}
+	}
+?>
