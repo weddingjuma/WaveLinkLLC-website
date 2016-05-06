@@ -1,1 +1,1 @@
-"C:\PHP\php-cgi.exe" -f "C:\inetpub\wwwroot\WaveLinkLLC\email_processor.php"
+"C:\Program Files (x86)\PHP\v5.6\php-cgi.exe" -f "C:\inetpub\wwwroot\WaveLinkLLC\email_processor.php"
