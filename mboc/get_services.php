@@ -2,7 +2,6 @@
 	include 'functions.php';
 	$c = connect_to_database();
 	$vin = ($_POST['vin'] <> "" ? $_POST['vin'] : "none");
-	$email = ($_POST['email'] <> "" ? $_POST['email'] : "none");
 
 	$responseData = array();
 	
@@ -51,7 +50,7 @@
 				birth_date
 		FROM `services` AS services
 		LEFT JOIN `images` AS images ON services.vin = images.vin   
-		WHERE services.vin = '".$vin."' OR email = '".$email."' ORDER BY open_date DESC"
+		WHERE services.vin = '".$vin."' ORDER BY open_date DESC"
 	)or die(mysqli_error($c));
 	
 	while($row = mysqli_fetch_array( $result, MYSQL_ASSOC )) {
