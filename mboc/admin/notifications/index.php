@@ -7,6 +7,7 @@
 	$c = connect_to_database();
 	$setting = get_settings($c, "SELECT * FROM settings WHERE page = 'notifications'");
 	$text = $_POST['text']; if(strlen($text) > 160) { $text = substr($text, 0, 160).'...'; }
+    $userId = $_POST['userId'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,8 +28,14 @@
 		  <fieldset>
 			<div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
-				<label>Send an iOS push notification to all users (160 chars. max):</label>
+				<label>Send an iOS push notification (160 chars. max):</label>
 				<textarea class="form-control" name="text" id="text" rows="5" required></textarea>
+			  </div>
+			</div>
+              <div class="row form-group">
+			  <div class="col-md-12 col-xs-12">
+				<label>Only send to one account ID? (Optional):</label>
+				<input class="form-control" type="text" name="userId" />
 			  </div>
 			</div>
 			<div class="form-actions">
@@ -45,7 +52,8 @@
 				);
 				$push->connect();
 				
-				$result = mysqli_query($c, "SELECT * FROM `devices` WHERE type = 'ios'") or die(mysqli_error($c));	
+                $query = "SELECT * FROM `devices` WHERE type = 'ios'".($userId <> "" ? " AND userId = ".$userId : "");
+				$result = mysqli_query($c, $query) or die(mysqli_error($c));
 				$i = 0;
 				while($device = mysqli_fetch_array($result, MYSQL_ASSOC)) { $i++;
 					try {
