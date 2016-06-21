@@ -1,8 +1,10 @@
 <div class="row header">
 	<div class="col-xs-hide col-md-4" style="text-align:left;">
-		<a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/news/">
+		<!--
+        <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/news/">
 			<i class="fa fa-newspaper-o header_icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span class="header_link">NEWS</span>
 		</a>
+        -->
 	</div>
 	<div class="col-xs-hide col-md-4" style="text-align:center;">
 		<a href="http://www.wavelinkllc.com"><img class="logo" src="<?php echo ($header_logo <> "" ? $header_logo : "../images/WaveLink_Logo_white.png"); ?>" alt="Wave Link, LLC - High-Quality Mobile Apps, Websites, & Graphics" /></a>
