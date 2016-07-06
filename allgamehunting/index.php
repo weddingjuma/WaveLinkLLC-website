@@ -52,30 +52,57 @@
 			</div>
 		</div>
 	</div>
-    <div class="divider">
-        Giving Hunters an EDGE
-    </div>
     <div id="products" class="products" style="background-image:url('/allgamehunting/images/background5.jpg');">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-12">
-                    <div class="product">
-                        <div class="product_image">
-
+            <div class="row product">
+                <div class="col-xs-12 col-md-6 product_image">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <img src="/allgamehunting/images/product1.png" />
                         </div>
-                        <div class="product_information">
-                            <div class="product_title">
-                                ROBO
-                            </div>
-                            <div class="product_description">
-                                This is the robo caller.
-                            </div>
+                        <div class="col-xs-12 col-md-6">
+                            <img src="/allgamehunting/images/product2.png" />
                         </div>
                     </div>
+                </div>
+                <div class="col-xs-12 col-md-6 product_information">
+                    <div class="product_title">
+                        ROBO Calling System
+                    </div>
+                    <div class="product_description">
+                        Robo is a robotic motor-driven device that turns a mechanical call or better known as a bleat can call. Robo is 6 and a quarter inches high 3 inches wide. The ground stake, cradle arm, and shaft are made out of the same high quality material Glocks are made out of. All the components are conformal coated so water or moisture won't bother it.
+                    </div>
+                    <button class="product_button">Buy &middot; $169.00</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="social">
+        <div class="social_title">
+            Social
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <iframe
+                        src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthehuntingpage&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=361862767338317"
+                        width="340"
+                        height="500"
+                        style="border:none; overflow:hidden;"
+                        scrolling="no"
+                        frameborder="0"
+                        allowTransparency="true">
+                    </iframe>
+                    <div style="height:100px;"></div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <iframe width="660" height="391" src="https://www.youtube.com/embed/yPhpjxxrS8s" frameborder="0" allowfullscreen></iframe>
+                    <button class="product_button" style="margin-bottom:100px;">View all AGH TV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/footer.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/js/main.php'; ?>
     <script>
 		$( document ).ready(function() {
