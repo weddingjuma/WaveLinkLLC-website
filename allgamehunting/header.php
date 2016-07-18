@@ -11,7 +11,7 @@
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">Home</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
-            <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/tv/">AGH TV</a></div>
+            <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
             <div class="col-xs-hide col-md-2 header_button">
                 <a href="<?php echo $setting['linkedin_link']; ?>" target="_blank"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;
@@ -30,7 +30,7 @@
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">Home</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
-		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/tv/">AGH TV</a></div>
+		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
 	</div>
 </div>

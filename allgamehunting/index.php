@@ -52,7 +52,19 @@
 			</div>
 		</div>
 	</div>
-    <div id="products" class="products" style="background-image:url('/allgamehunting/images/background5.jpg');">
+    <div id="products" class="banner">
+        <div class="container">
+            <div class="banner_title">
+                Products
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <img class="banner_image" src="/allgamehunting/images/robo_logo.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="products" style="background-image:url('/allgamehunting/images/background5.jpg');">
         <div class="container">
             <div class="row product">
                 <div class="col-xs-12 col-md-6 product_image">
@@ -67,12 +79,12 @@
                 </div>
                 <div class="col-xs-12 col-md-6 product_information">
                     <div class="product_title">
-                        ROBO Calling System
+                        The Robo Calling System
                     </div>
                     <div class="product_description">
-                        Robo is a robotic motor-driven device that turns a mechanical call or better known as a bleat can call. Robo is 6 and a quarter inches high 3 inches wide. The ground stake, cradle arm, and shaft are made out of the same high quality material Glocks are made out of. All the components are conformal coated so water or moisture won't bother it.
+                        ROBO is a robotic motor-driven device that turns a mechanical call.  This call is better know as a bleat can call. ROBO is 6 1/4" H X 3" W X ?? D and weighs X.XX pounds.  This is the perfect size to stow in or attach to a backpack and place on the ground or strapped to a tree out of plain site.  The ground stake, cradle arm, and shaft are made out of the same high quality material major gun manufactures use in there high quality housings.
                     </div>
-                    <button class="product_button">Buy &middot; $169.00</button>
+                    <button class="product_button">Buy &middot; $169.99</button>
                 </div>
             </div>
         </div>

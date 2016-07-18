@@ -8,12 +8,12 @@
 					<i>Powered by</i><br /><a href="http://www.wavelinkllc.com/" target="_blank"><img class="wavelink_logo" src="http://www.wavelinkllc.com/images/WaveLink_Logo.png" alt="Wave Link, LLC"></a>
 				</div>
 				<div class="col-xs-12 col-md-3 footer_div">
-					<div class="footer_title">Map</div>
+					<div class="footer_title">Links</div>
 					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">Home</a></div>
-					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About Us</a></div>
-					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/services/">Our Services</a></div>
-					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/resources/">Resources</a></div>
-					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact Us</a></div>
+					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
+					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
+					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
+					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
 				</div>
 				<div class="col-xs-12 col-md-3 footer_div">
 					<div class="footer_title">Social</div>

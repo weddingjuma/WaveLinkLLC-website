@@ -231,6 +231,28 @@ img { -ms-interpolation-mode: bicubic; }
 
 
 
+.banner {
+    background-color: #1a1a1a;
+}
+
+.banner_title {
+    width: 100%;
+    padding: 40px 0px 10px 0px;
+    font-family: 'Audiowide', cursive;
+	font-size: 20px;
+	letter-spacing: 0.05em;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.banner_image {
+    height: 125px;
+    margin: 10px 0px 40px 0px;
+}
+
+
+
 .products {
     width: 100%;
     padding-top: 100px;
