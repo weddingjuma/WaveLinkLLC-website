@@ -10,7 +10,7 @@
 	    public $cancel_url;
 
 	    public function __construct(){
-	        $this->baseURL = (strpos($_SERVER['SERVER_PROTOCOL'], "HTTPS") === false ? "http" : "https")."://".$_SERVER['SERVER_NAME'].str_replace($_SERVER['DOCUMENT_ROOT'], '', __DIR__);
+	        $this->baseURL = (strpos($_SERVER['SERVER_PROTOCOL'], "HTTPS") === false ? "http" : "https")."://".$_SERVER['SERVER_NAME'].str_replace('\\', '/', str_replace($_SERVER['DOCUMENT_ROOT'], '', __DIR__));
 			//$this->public_var = "";
 	    }
 
@@ -25,7 +25,7 @@
 				<span id=\"cart_loading_span\" class=\"cart_loading_span\">Loading&nbsp;<i class=\"fa fa-spinner\"></i></span>
 				<div style=\"float:right; cursor:pointer;\" onclick=\"toggle_cart();\"><i class=\"fa fa-times-circle\"></i></div>
 			</div>";
-			session_start();
+			//session_start();
 			//$_SESSION['cart_items'] = '[{"id":1,"quantity":1,"type":"test"},{"id":2,"quantity":1,"type":""}]';
 			if(isset($_SESSION['cart_items'])) {
 			    $cart_items = json_decode($_SESSION['cart_items'], true);
@@ -69,7 +69,7 @@
 					$cart .=
 					"<table class=\"cart_item_table\">
 						<tr>
-							<td class=\"cart_item_img_td\" style=\"background-image:url('http://".$_SERVER['SERVER_NAME'].$product['image1']."');\"></td>
+							<td class=\"cart_item_img_td\" style=\"background-image:url('http://".$_SERVER['SERVER_NAME'].'/allgamehunting'.$product['image1']."');\"></td>
 							<td class=\"cart_item_info_td\">
 								<input id=\"cart_item_quantity_".$product["id"]."\" class=\"cart_item_quantity\" onkeydown=\"highlight_cart_item_update_td(".$product['id'].");\" type=\"text\" value=\"".$cart_items[$index]["quantity"]."\" /> x <i>".$product['title']."</i><br />
 								$".(($product['on_sale'] == "no" ? $product['price'] : $product['sale_price']) * $cart_items[$index]["quantity"])."	".($type <> "" ? " &middot; ".$type : "")."
@@ -78,11 +78,6 @@
 							<td class=\"cart_item_remove_td\" onclick=\"remove_cart_item(".$product['id'].");\"><i class=\"fa fa-times\"></i></td>
 						</tr>
 					</table>";
-					$form_items .=
-							  "<input type=\"hidden\" name=\"item_number_".($index + 1)."\" value=\"".$product['id']."\">
-						       <input type=\"hidden\" name=\"item_name_".($index + 1)."\" value=\"".$product["title"]." ".($cart_items[$index]["type"] <> "" && $cart_items[$index]["type"] <> "none" ? "(".$cart_items[$index]["type"].")" : "")."\">
-						       <input type=\"hidden\" name=\"amount_".($index + 1)."\" value=\"".($product['on_sale'] == "no" ? $product['price'] : $product['sale_price'])."\">
-						       <input type=\"hidden\" name=\"quantity_".($index + 1)."\" value=\"".$cart_items[$index]["quantity"]."\">";
 				    if($product['on_sale'] == "no") {
 						$total = $total + $product["price"] * $cart_items[$index]["quantity"];
 					} else {
@@ -95,21 +90,10 @@
 						SUB-TOTAL
 						<div style=\"float:right;\">$".round($total, 2)."</div>
 					</div>
-					<form name=\"_xclick\" target=\"paypal\" action=\"https://www.paypal.com/uk/cgi-bin/webscr\" method=\"post\">
-						<input type=\"hidden\" name=\"cmd\" value=\"_cart\">
-						".$form_items."
-						<input type=\"hidden\" name=\"upload\" value=\"1\" />
-						<input type=\"hidden\" name=\"currency_code\" value=\"USD\">
-						<input type=\"hidden\" name=\"no_shipping\" value=\"".$this->no_shipping."\">
-						<input type=\"hidden\" name=\"return\" value=\"".$this->return_url."?status=paid\">
-						<input type=\"hidden\" name=\"cancel_return\" value=\"".$this->cancel_url."\">
-						<input type=\"hidden\" name=\"business\" value=\"".$this->paypal_email."\">
-						<input type=\"hidden\" name=\"cpp_cart_border_color\" value=\"".$this->paypal_color."\">
-						<input type=\"submit\" value=\"CHECKOUT\" class=\"cart_checkout_button\">
-					</form>";
+                    <button class=\"cart_checkout_button\" onclick=\"location.href='http://".$_SERVER['SERVER_NAME']."/allgamehunting/checkout/';\">CHECKOUT</button>";
 				}
 			} else {
-				$cart .= "<div class=\"cart_item_div\"><i>No items in cart.</i></div>";
+				$cart .= "<div class=\"cart_item_table\"><i>No items in cart.</i></div>";
 			}
 			return $cart;
 	    }
@@ -174,8 +158,8 @@ EOF;
 							.done(function( data ) {
 								$("#cart").html( data );
 							})
-							.fail(function() {
-								alert("There was an network error. Please try again.");
+							.fail(function( data ) {
+								alert("There was an network error. Please try again." + data.statusd);
 							})
 							.always(function() {
 								$("#cart_loading_span").hide();

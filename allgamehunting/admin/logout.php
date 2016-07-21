@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
+include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/configuration.php';
+include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/functions.php';
 $c = connect_to_database();
 
 session_start();

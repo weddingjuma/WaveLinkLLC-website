@@ -83,6 +83,18 @@ img { -ms-interpolation-mode: bicubic; }
     text-align: right;
 }
 
+.header_cart_button {
+    color: #F9690E;
+    background: none;
+    border: none;
+}
+
+.header_cart_button:hover {
+    color: white;
+    background: none !important;
+    border: none !important;
+}
+
 .menu {
 	display: none;
 	position: absolute;
@@ -301,7 +313,21 @@ img { -ms-interpolation-mode: bicubic; }
 	color: #5b5b5b;
 }
 
-.product_button {
+
+
+.buy_button {
+    padding: 10px 20px 10px 20px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #353535;
+    background-color: #F9690E;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.detail_button {
     padding: 10px 20px 10px 20px;
     margin-top: 30px;
     font-size: 15px;

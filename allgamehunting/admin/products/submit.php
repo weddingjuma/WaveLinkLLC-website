@@ -1,7 +1,7 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/authentication.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/authentication.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/functions.php';
 	$c = connect_to_database();
 	$id = $_POST['id'];
 	$title = addslashes($_POST['title']);

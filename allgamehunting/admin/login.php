@@ -1,6 +1,6 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/functions.php';
 	$c = connect_to_database();
 
 	// username and password sent from form
@@ -22,7 +22,7 @@
 		session_start();
 		$_SESSION["email"] = $email;
 		$_SESSION["password"] = $password;
-		header("Location: http://".$_SERVER['SERVER_NAME']."/admin/settings/");
+		header("Location: http://".$_SERVER['SERVER_NAME']."/allgamehunting/admin/settings/");
 	}else{
 		$sql="SELECT * FROM users WHERE email='$email' and password='$password'";
 		$result=mysqli_query($c, $sql);
@@ -33,9 +33,9 @@
 			$_SESSION["password"] = $session_password;
 			setcookie("email", $session_email, time()+3600*24*1, "/"); //expire in 24 hours or 1 day
 			if(mysqli_query($c, "UPDATE `users` SET session='$session' WHERE email='$email' and password='$password'")){ }else{ }
-			header("Location: http://".$_SERVER['SERVER_NAME']."/admin/settings/");
+			header("Location: http://".$_SERVER['SERVER_NAME']."/allgamehunting/admin/settings/");
 		}else{
-			header("Location: http://".$_SERVER['SERVER_NAME']."/admin/?error=yes&email=".$session_email."&password=".$session_password."");
+			header("Location: http://".$_SERVER['SERVER_NAME']."/allgamehunting/admin/?error=yes&email=".$session_email."&password=".$session_password."");
 		}
 	}
 ?>

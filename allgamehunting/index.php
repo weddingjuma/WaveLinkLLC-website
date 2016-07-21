@@ -37,7 +37,7 @@
 				<div id="presentation_subtitle" class="presentation_subtitle">
 					<?php echo $setting['feature1_description']; ?>
 				</div>
-                <button class="presentation_button">Get Started</button>
+                <button class="presentation_button" onclick="$('html,body').animate({ scrollTop: $('#products').offset().top });">Get Started</button>
 				<div class="row presentation_dots">
 					<div class="col-xs-4 col-md-4">
 						<div id="presentation_dot_1" class="presentation_dot presentation_dot_selected"></div>
@@ -84,7 +84,12 @@
                     <div class="product_description">
                         ROBO is a robotic motor-driven device that turns a mechanical call.  This call is better know as a bleat can call. ROBO is 6 1/4" H X 3" W X ?? D and weighs X.XX pounds.  This is the perfect size to stow in or attach to a backpack and place on the ground or strapped to a tree out of plain site.  The ground stake, cradle arm, and shaft are made out of the same high quality material major gun manufactures use in there high quality housings.
                     </div>
-                    <button class="product_button">Buy &middot; $169.99</button>
+                    <table>
+                        <tr>
+                            <td><?php echo $Cart -> add_to_cart_button(1, 1, "", "Buy &middot; $169.99", "buy_button"); ?>&nbsp;&nbsp;&nbsp;</td>
+                            <td><button class="detail_button">Details</button></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -109,7 +114,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <iframe width="660" height="391" src="https://www.youtube.com/embed/yPhpjxxrS8s" frameborder="0" allowfullscreen></iframe>
-                    <button class="product_button" style="margin-bottom:100px;">View all AGH TV</button>
+                    <button class="detail_button" style="margin-bottom:100px;">View all AGH TV</button>
                 </div>
             </div>
         </div>
