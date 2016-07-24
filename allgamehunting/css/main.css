@@ -28,16 +28,16 @@ button:hover {
 img { -ms-interpolation-mode: bicubic; }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #515151;
+    color: #a0a0a0;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #515151;
+    color: #a0a0a0;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #515151;
+    color: #a0a0a0;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #515151;
+    color: #a0a0a0;
 }
 
 
@@ -358,14 +358,32 @@ img { -ms-interpolation-mode: bicubic; }
 
 
 
+.contact_container {
+    margin: 20px 0px 0px 0px;
+}
+
 .contact_textbox {
 	width: 100%;
-	color: #262626;
-	margin: 5px;
+    font-size: 17px;
+    font-weight: 300;
+	color: #353535;
 	padding: 10px;
-	background: none;
-	border: 1px solid #262626;
-	border-radius: 2px;
+	background: white;
+	border: none;
+}
+
+.contact_note {
+    font-size: 12px;
+    font-weight: 300;
+	color: #353535;
+}
+
+.contact_note a {
+    color: blue;
+}
+
+.contact_note a:hover {
+    color: black;
 }
 
 .contact_button {

@@ -8,17 +8,8 @@
 	  <li><a href="/allgamehunting/admin/settings/" <?php if (false === strpos($url,'settings')) { echo 'class="active"'; } ?>>Settings</a></li>
 	  <li><a href="/allgamehunting/admin/homepage/" <?php if (false === strpos($url,'homepage')) { echo 'class="active"'; } ?>>Content</a></li>
 	  <li><a href="/allgamehunting/admin/clients/" <?php if (false === strpos($url,'clients')) { echo 'class="active"'; } ?>>Contacts</a></li>
-	  <!--<li><a href="/admin/contracts/" <?php if (false === strpos($url,'contracts')) { echo 'class="active"'; } ?>>Contracts</a></li>-->
-	  <!--<li><a href="/admin/accounts/" <?php if (false === strpos($url,'accounts')) { echo 'class="active"'; } ?>>Accounts</a></li>-->
 	  <li><a href="/allgamehunting/admin/products/" <?php if (false === strpos($url,'products')) { echo 'class="active"'; } ?>>Products</a></li>
-	  <li><a href="/allgamehunting/admin/events/" <?php if (false === strpos($url,'events')) { echo 'class="active"'; } ?>>Events</a></li>
-	  <!--<li><a href="/admin/specials/" <?php if (false === strpos($url,'specials')) { echo 'class="active"'; } ?>>Specials</a></li>-->
-	  <!--<li><a href="/admin/stores/" <?php if (false === strpos($url,'stores')) { echo 'class="active"'; } ?>>Staff</a></li>-->
-	  <!--<li><a href="/admin/categories/" <?php if (false === strpos($url,'categories')) { echo 'class="active"'; } ?>>Categories</a></li>-->
-	  <!--<li><a href="/admin/portfolio/" <?php if (false === strpos($url,'portfolio')) { echo 'class="active"'; } ?>>Gallery</a></li>-->
-	  <!--<li><a href="/admin/blog/" <?php if (false === strpos($url,'blog')) { echo 'class="active"'; } ?>>Blog</a></li>-->
-	  <!--<li><a href="/admin/issues/" <?php if (false === strpos($url,'issues')) { echo 'class="active"'; } ?>>Issues</a></li>-->
-	  <!--<li><a href="/admin/appointments/" <?php if (false === strpos($url,'appointments')) { echo 'class="active"'; } ?>>Appointments</a></li>-->
+	  <li><a href="/allgamehunting/admin/orders/" <?php if (false === strpos($url,'orders')) { echo 'class="active"'; } ?>>Orders</a></li>
 	  <li><a href="/allgamehunting/admin/seo/" <?php if (false === strpos($url,'seo')) { echo 'class="active"'; } ?>>SEO</a></li>
 	  <li><a href="/allgamehunting/admin/logout.php" style="color:#e74c3c;">Logout</a></li>
 	  <!--<li><button class="btn btn-default btn-sm navbar-btn">Go to website</button></li>-->

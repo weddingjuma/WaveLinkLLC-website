@@ -5,7 +5,7 @@
 	$c = connect_to_database();
 	$id = $_GET['id'];
 
-	if(mysqli_query($c, "delete from users where id = '$id'")){
+	if(mysqli_query($c, "delete from orders where id = '$id'")){
 		header("Location: index.php");
 	}else{
 		header("Location: error.php");

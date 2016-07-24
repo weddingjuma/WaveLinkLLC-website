@@ -10,6 +10,7 @@
 	$seo = get_seo($c, "checkout");
 	$metatags = build_metatags($seo, $setting);
 	$detect = new Mobile_Detect;
+    $baseURL = (strpos($_SERVER['SERVER_PROTOCOL'], "HTTPS") === false ? "http" : "https")."://".$_SERVER['SERVER_NAME'].str_replace('\\', '/', str_replace($_SERVER['DOCUMENT_ROOT'], '', __DIR__));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +82,8 @@
                                             <input id=\"cart_item_quantity_".$product["id"]."\" class=\"cart_item_quantity\" onkeydown=\"highlight_cart_item_update_td(".$product['id'].");\" type=\"text\" value=\"".$cart_items[$index]["quantity"]."\" /> x <i>".$product['title']."</i><br />
                                             $".(($product['on_sale'] == "no" ? $product['price'] : $product['sale_price']) * $cart_items[$index]["quantity"])."	".($type <> "" ? " &middot; ".$type : "")."
                                         </td>
-                                        <td class=\"cart_item_update_td\" onclick=\"update_cart_item(".$product['id']."); location.reload();\"><i class=\"fa fa-retweet\"></i></td>
-                                        <td class=\"item_remove_td\" onclick=\"remove_cart_item(".$product['id']."); location.reload();\"><i class=\"fa fa-times\"></i></td>
+                                        <td class=\"cart_item_update_td\" onclick=\"update_item(".$product['id'].");\"><i class=\"fa fa-retweet\"></i></td>
+                                        <td class=\"item_remove_td\" onclick=\"remove_item(".$product['id'].");\"><i class=\"fa fa-times\"></i></td>
                                     </tr>
                                 </table>";
                                 if($product['on_sale'] == "no") {
@@ -104,7 +105,64 @@
                         echo $cart;
                         ?>
                     </div>
-                    <button class="buy_button">Submit Order</button>
+                    <form id="order_form" method="post" action="submit.php">
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="first_name" placeholder="First Name" />
+                            </div>
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="last_name" placeholder="Last Name" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input id="email_address" class="contact_textbox" type="text" name="email_address" placeholder="Email Address" />
+                            </div>
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="email_address_confirm" placeholder="Email Address (Confirm)" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="phone_number" placeholder="Phone Number" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="mailing_address_1" placeholder="Mailing Address" />
+                            </div>
+                            <div class="col-xs-12 col-md-6 contact_container">
+                                <input class="contact_textbox" type="text" name="mailing_address_2" placeholder="Mailing Address (Cont.)" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-5 col-md-5 contact_container">
+                                <input class="contact_textbox" type="text" name="city" placeholder="City" />
+                            </div>
+                            <div class="col-xs-3 col-md-3 contact_container">
+                                <input class="contact_textbox" type="text" name="state" placeholder="State" />
+                            </div>
+                            <div class="col-xs-4 col-md-4 contact_container">
+                                <input class="contact_textbox" type="text" name="zip_code" placeholder="ZIP Code" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-12 contact_container">
+                                <input class="contact_textbox" type="text" name="notes" placeholder="Special Requests" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin: none;">
+                            <div class="col-xs-12 col-md-12 contact_container">
+                                <div class="contact_note">
+                                    <input type="checkbox" name="is_subscribed" checked />&nbsp;&nbsp;Join our email list
+                                </div>
+                                <div class="contact_note">
+                                    <input type="checkbox" name="is_agreed" />&nbsp;&nbsp;By checking this box, you agree to our <a href="">terms and conditions</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="buy_button">Submit Order</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -112,7 +170,72 @@
     <?php include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/footer.php'; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/js/main.php'; ?>
     <script>
+        $("#order_form").validate({
+            rules: {
+                first_name: {
+                    required: true
+                },
+                last_name: {
+                    required: true
+                },
+                email_address: {
+                    required: true,
+                    email: true
+                },
+                email_address_confirm: {
+                    equalTo: "#email_address"
+                },
+                phone_number: {
+                    required: true,
+                    digits: true
+                },
+                mailing_address_1: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                state: {
+                    required: true
+                },
+                zip_code: {
+                    required: true,
+                    digits: true
+                },
+                is_agreed: {
+                    required: true
+                }
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+		});
 
-    </script>
+        function add_item(product_id, quantity, type) {
+            $.post("http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/utility/cart/add_cart_item.php", { product_id: product_id, quantity: quantity, type: type } )
+                .done(function( data ) {
+                    location.reload();
+                })
+                .fail(function() {
+                    alert("There was an network error. Please try again.");
+                });
+        }
+
+        function remove_item(product_id) {
+            $.post("http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/utility/cart/remove_cart_item.php", { product_id: product_id } )
+                .done(function( data ) {
+                    location.reload();
+                })
+                .fail(function( data ) {
+                    alert("There was an network error. Please try again." + data.status);
+                });
+        }
+
+        function update_item(product_id) {
+            var quantity = $("#cart_item_quantity_" + product_id).val();
+            var type = $("#cart_item_type_" + product_id).val(); if(!type) { type = ""; }
+            add_item(product_id, quantity, type);
+        }
+	</script>
 </body>
 </html>

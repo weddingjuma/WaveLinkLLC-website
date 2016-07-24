@@ -1,7 +1,7 @@
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/authentication.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/configuration.php';
-	include $_SERVER['DOCUMENT_ROOT'].'/admin/utility/functions.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/authentication.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/configuration.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/admin/utility/functions.php';
 	$c = connect_to_database();
 	$id = $_POST['id'];
 	$first_name = addslashes($_POST['first_name']);
@@ -16,22 +16,6 @@
 
 	if($id == "") {
 		if(mysqli_query($c, "insert into users(first_name, last_name, email, phone, business_name, description, url, status, survey_completed) values('$first_name', '$last_name', '$email', '$phone', '$business_name', '$description', '$url', '$lead_status', '$survey_completed')")){
-
-			$subject = "New client added in the admin panel - ".$first_name." ".$last_name;
-			$body = "Name: ".$first_name." ".$last_name."<br />";
-			$body .= "Business Name: ".$business_name."<br />";
-			$body .= "Email: ".$email."<br />";
-			$body .= "Phone: ".$phone."<br />";
-			$body .= "URL: ".$url."<br />";
-			$body .= "Description: ".$description;
-			$time = date("YmdHis");
-			$id = mysql_insert_id;
-			$admins = array();
-			$admins[0] = "('aadams@wavelinkllc.com', '$subject', '$body', '$time', 'new_user', '$id')";
-			$admins[1] = "('kgraddick@wavelinkllc.com', '$subject', '$body', '$time', 'new_user', '$id')";
-			$admins[2] = "('dclark@wavelinkllc.com', '$subject', '$body', '$time', 'new_user', '$id')";
-			if(mysql_query("insert into emails (`to`, subject, text, time, type, reference_id) VALUES ".implode(',', $admins))) { } else { }
-
 			header("Location: index.php");
 		}else{
 			//header("Location: error.php");

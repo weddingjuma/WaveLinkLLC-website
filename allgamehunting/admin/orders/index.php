@@ -10,7 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $site_name ?> - Contacts</title>
+	<title><?php echo $site_name ?> - Orders</title>
 
 	<link rel="stylesheet" href="https://sdk.ttcdn.co/tt-uikit-0.11.0.min.css">
 </head>
@@ -18,15 +18,15 @@
 	<div class="app-container" style="max-width:100%;">
 		<?php include '../navigation.php'; ?>
 
-		<h3>Contacts</h3>
+		<h3>Orders</h3>
 
 		<form class="form-inline row" method="post">
 			<div class="col-xs-8 col-md-11">
 				<?php
 					if($search == "") {
-						echo "<input name=\"search\" type=\"search\" placeholder=\"Search contacts\" class=\"form-control\">";
+						echo "<input name=\"search\" type=\"search\" placeholder=\"Search orders\" class=\"form-control\">";
 					} else {
-						echo "<input name=\"search\" type=\"search\" placeholder=\"Search contacts\" class=\"form-control\" value=\"".$search."\">";
+						echo "<input name=\"search\" type=\"search\" placeholder=\"Search orders\" class=\"form-control\" value=\"".$search."\">";
 					}
 				?>
 			</div>
@@ -35,56 +35,53 @@
 			</div>
 		</form>
 
-		<a href="edit.php" class="btn btn-default"><b>+</b> Add new contact</a>
+		<!--<a href="edit.php" class="btn btn-default"><b>+</b> Add new order</a>-->
 
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
-					<th>Contact</th>
-					<th>Business</th>
-					<th>Description</th>
-					<th>Status</th>
-					<th>Survey Completed</th>
-					<th>Date Added</th>
-					<th>Last Contacted</th>
+					<th>Order Id</th>
+					<th>Customer</th>
+					<th>Invoice</th>
+					<th>Notes</th>
+                    <th>Total</th>
+					<th>Requested Date</th>
+					<th>Completed?</th>
+					<th>Completed Date</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
-					$query = "SELECT * FROM `users`";
+					$query = "SELECT * FROM `orders`";
 					if($search <> "") {
 						$search = "%".$search."%";
 						$query = $query." WHERE
 							id LIKE '$search' OR
 							first_name LIKE '$search' OR
 							last_name LIKE '$search' OR
-							business_name LIKE '$search' OR
-							email LIKE '$search' OR
-							phone LIKE '$search' OR
-							description LIKE '$search' OR
-							url LIKE '$search'";
+							email_address LIKE '$search' OR
+							phone_number LIKE '$search'";
 					}
 					$result = mysqli_query($c, $query) or die(mysql_error());
 					while($u = mysqli_fetch_array( $result, MYSQL_ASSOC )) {
 						echo
 						"<tr>
-							<td><a href=\"".$u["url"]."\" target=\"_blank\">".$u["id"]."</a></td>
+							<td>".$u["id"]."</td>
 							<td>
 								".$u["first_name"]." ".$u["last_name"]."<br />
-								".$u["email"]."<br />
-								".$u["phone"]."<br />
-								<a href=\"".$u["url"]."\" target=\"_blank\">".$u["url"]."</a>
+								".$u["email_address"]." &middot; ".$u["phone_number"]."<br />
+								".$u["mailing_address_1"]." ".$u["mailing_address_2"]."
+								".$u["city"].", ".$u["state"]." ".$u["zip_code"]."
 							</td>
-							<td>".$u["business_name"]."</td>
-							<td>".$u["description"]."</td>
-							<td>".$u["status"]."</td>
-							<td>".$u["survey_completed"]."</td>
+							<td>".$u["invoice"]."</td>
+							<td>".$u["notes"]."</td>
+                            <td>".$u["total"]."</td>
 							<td>".$u["date_added"]."</td>
-							<td>".$u["date_last_contacted"]."</td>
+							<td class=\"status\">"; if($u["date_completed"] != NULL) { echo "<span class=\"on\">"; } else { echo "<span class=\"off\">"; } echo "</span></td>
+							<td>".($u["date_completed"] != NULL ? $u["date_completed"] : "n/a")."</td>
 							<td>
-								<a href=\"edit.php?id=".$u["id"]."\" class=\"btn btn-default btn-sm\" style=\"display:inline;\">Edit</a>&nbsp;<a href=\"../contracts/edit.php?user_id=".$u["id"]."\" class=\"btn btn-default btn-sm\" style=\"display:inline;\">Add contract</a>&nbsp;<a href=\"delete.php?id=".$u["id"]."\" class=\"btn btn-danger btn-sm\" style=\"display:inline;\" onclick=\"return confirm('Are you sure you want to delete this?');\">Delete</a>
+								<a href=\"edit.php?id=".$u["id"]."\" class=\"btn btn-default btn-sm\" style=\"display:inline;\">Edit</a>&nbsp;<a href=\"delete.php?id=".$u["id"]."\" class=\"btn btn-danger btn-sm\" style=\"display:inline;\" onclick=\"return confirm('Are you sure you want to delete this?');\">Delete</a>
 							</td>
 						</tr>";
 					}
