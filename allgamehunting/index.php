@@ -28,7 +28,7 @@
 		See the products&nbsp;&nbsp;&nbsp;&nabla;
 	</div>
     <div class="row slideshow">
-		<div class="col-xs-12 col-md-12 slideshow_image" style="background-image: url('/allgamehunting/images/background2.jpg');"> <!-- <php echo $setting['feature1_photo']; ?> -->
+		<div class="col-xs-12 col-md-12 slideshow_image" style="background-image: url('/allgamehunting/images/background1.jpg');"> <!-- <php echo $setting['feature1_photo']; ?> -->
 			<div class="slideshow_temp_image"></div>
 			<div class="container presentation">
 				<div id="presentation_title" class="presentation_title">
@@ -79,10 +79,10 @@
                 </div>
                 <div class="col-xs-12 col-md-6 product_information">
                     <div class="product_title">
-                        The Robo Calling System
+                        The <img src="/allgamehunting/images/robo_logo_2.png" style="height: 27px; margin-bottom: 5px;" /> Calling System
                     </div>
                     <div class="product_description">
-                        ROBO is a robotic motor-driven device that turns a mechanical call.  This call is better know as a bleat can call. ROBO is 6 1/4" H X 3" W X ?? D and weighs X.XX pounds.  This is the perfect size to stow in or attach to a backpack and place on the ground or strapped to a tree out of plain site.  The ground stake, cradle arm, and shaft are made out of the same high quality material major gun manufactures use in there high quality housings.
+                        <img src="/allgamehunting/images/robo_logo_2.png" style="height: 14px; margin-bottom: 2px;" /> is a robotic motor-driven device that turns a mechanical call.  This call is better know as a bleat can call. <img src="/allgamehunting/images/robo_logo_2.png" style="height: 14px; margin-bottom: 2px;" /> is 6 1/4" H X 3" W X ?? D and weighs X.XX pounds.  This is the perfect size to stow in or attach to a backpack and place on the ground or strapped to a tree out of plain site.  The ground stake, cradle arm, and shaft are made out of the same high quality material major gun manufactures use in there high quality housings.
                     </div>
                     <table>
                         <tr>
@@ -124,7 +124,7 @@
     <script>
 		$( document ).ready(function() {
 			//var images = [<?php echo "'".$setting['feature1_photo']."', '".$setting['feature2_photo']."', '".$setting['feature3_photo']."'"; ?>];
-            var images = ['/allgamehunting/images/background2.jpg', '/allgamehunting/images/background3.jpg', '/allgamehunting/images/background1.jpg'];
+            var images = ['/allgamehunting/images/background1.jpg', '/allgamehunting/images/background6.jpg', '/allgamehunting/images/background7.jpg'];
 			var titles = [<?php echo "'".$setting['feature1_title']."', '".$setting['feature2_title']."', '".$setting['feature3_title']."'"; ?>];
 			var descriptions = [<?php echo "'".$setting['feature1_description']."', '".$setting['feature2_description']."', '".$setting['feature3_description']."'"; ?>];
 			var numberOfRotations = 100;

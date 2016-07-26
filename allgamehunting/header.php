@@ -17,10 +17,10 @@
         <div class="row">
             <div class="col-xs-9 col-md-5 header_logo">
                 <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">
-                    <img src="/allgamehunting/images/logo_background.png" />
+                    <img src="/allgamehunting/images/logo.png" />
                     <!--<img class="logo" src="<?php echo $setting['logo']; ?>" />-->
                 </a>
-                ALL GAME HUNTING
+                <!--ALL GAME HUNTING-->
             </div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">Home</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
