@@ -244,7 +244,7 @@ img { -ms-interpolation-mode: bicubic; }
 
 
 .banner {
-    background-color: #1a1a1a;
+    background-color: #2D2D2D;
 }
 
 .banner_title {
@@ -276,7 +276,7 @@ img { -ms-interpolation-mode: bicubic; }
 }
 
 .product {
-    width: 100%;
+
 }
 
 .product_image {
@@ -341,8 +341,46 @@ img { -ms-interpolation-mode: bicubic; }
 
 
 
+.reviews {
+    margin-top: 50px;
+    padding: 40px;
+    color: #5b5b5b;
+    background-color: white;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+.review_title {
+    font-family: 'Audiowide', cursive;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 25px;
+	letter-spacing: 0.05em;
+    text-transform: uppercase;
+	color: #353535;
+}
+
+.review {
+    margin-top: 30px;
+}
+
+.review_stars {
+    color: #F5AB35;
+}
+
+.review_text {
+    font-weight: 300;
+}
+
+.review_author {
+    text-align: right;
+    font-weight: 700;
+}
+
+
+
 .social {
-    background-color: #1a1a1a;
+    background-color: #2D2D2D;
 }
 
 .social_title {

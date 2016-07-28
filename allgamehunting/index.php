@@ -10,6 +10,7 @@
 	$seo = get_seo($c, "home");
 	$metatags = build_metatags($seo, $setting);
 	$detect = new Mobile_Detect;
+    $is_home_page = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +88,7 @@
                     <table>
                         <tr>
                             <td><?php echo $Cart -> add_to_cart_button(1, 1, "", "Buy &middot; $169.99", "buy_button"); ?>&nbsp;&nbsp;&nbsp;</td>
-                            <td><button class="detail_button">Details</button></td>
+                            <td><button class="detail_button" onclick="location.href='/allgamehunting/product/?id=1'">Details</button></td>
                         </tr>
                     </table>
                 </div>

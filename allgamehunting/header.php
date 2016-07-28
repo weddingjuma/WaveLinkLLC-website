@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-xs-9 col-md-5 header_logo">
                 <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">
-                    <img src="/allgamehunting/images/logo.png" />
+                    <img src="/allgamehunting/images/logo.png" <?php if ($is_home_page) { echo 'style="position:absolute; height:175px;"'; } ?> />
                     <!--<img class="logo" src="<?php echo $setting['logo']; ?>" />-->
                 </a>
                 <!--ALL GAME HUNTING-->

@@ -1,5 +1,7 @@
 <?php
 
+$is_home_page = false;
+
 function connect_to_database() {
 	// Connect to server and select databse.
 	$c = mysqli_connect($GLOBALS['database_host'],
