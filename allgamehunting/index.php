@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <iframe width="660" height="391" src="https://www.youtube.com/embed/yPhpjxxrS8s" frameborder="0" allowfullscreen></iframe>
-                    <button class="detail_button" style="margin-bottom:100px;">View all AGH TV</button>
+                    <button class="detail_button" style="margin-bottom:100px;">View gallery</button>
                 </div>
             </div>
         </div>
