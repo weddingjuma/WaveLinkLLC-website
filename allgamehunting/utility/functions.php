@@ -1,6 +1,6 @@
 <?php
 
-$is_home_page = false;
+$is_big_logo = false;
 
 function connect_to_database() {
 	// Connect to server and select databse.

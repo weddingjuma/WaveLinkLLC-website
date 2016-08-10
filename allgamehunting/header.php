@@ -15,9 +15,9 @@
 <div class="header">
     <div class="container">
         <div class="row">
-            <div class="col-xs-9 col-md-5 header_logo">
+            <div class="col-xs-9 col-md-4 header_logo">
                 <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/">
-                    <img src="/allgamehunting/images/logo.png" <?php if ($is_home_page) { echo 'style="position:absolute; height:175px;"'; } ?> />
+                    <img src="/allgamehunting/images/logo.png" <?php if ($is_big_logo) { echo 'style="position:absolute; height:175px;"'; } ?> />
                     <!--<img class="logo" src="<?php echo $setting['logo']; ?>" />-->
                 </a>
                 <!--ALL GAME HUNTING-->
@@ -26,6 +26,7 @@
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
+            <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/support/">Support</a></div>
             <div class="col-xs-hide col-md-1 header_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
             <div class="col-xs-hide col-md-2 header_button">
                 <a href="<?php echo $setting['linkedin_link']; ?>" target="_blank"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;
@@ -44,6 +45,7 @@
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
+        <div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/support/">Support</a></div>
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
 	</div>
 </div>

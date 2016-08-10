@@ -10,7 +10,7 @@
 	$seo = get_seo($c, "home");
 	$metatags = build_metatags($seo, $setting);
 	$detect = new Mobile_Detect;
-    $is_home_page = true;
+    $is_big_logo = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">

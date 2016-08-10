@@ -10,6 +10,7 @@
 	$seo = get_seo($c, "about");
 	$metatags = build_metatags($seo, $setting);
 	$detect = new Mobile_Detect;
+    $is_big_logo = true;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
 </head>
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/allgamehunting/header.php'; ?>
-    <div class="about_banner" style="background-image:url('/allgamehunting/images/background8.jpg');"></div>
+    <div class="about_banner" style="background-image:url('/allgamehunting/images/background9.jpg');"></div>
     <div class="about_title">
         <div class="container">
             About

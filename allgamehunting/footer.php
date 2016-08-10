@@ -13,6 +13,7 @@
 					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/about/">About</a></div>
 					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/store/">Store</a></div>
 					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/gallery/">Gallery</a></div>
+                    <div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/support/">Support</a></div>
 					<div class="footer_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/allgamehunting/contact/">Contact</a></div>
 				</div>
 				<div class="col-xs-12 col-md-3 footer_div">
