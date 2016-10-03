@@ -60,7 +60,7 @@
             <div class="row form-group">
               <div class="col-md-12 col-xs-12">
 				<label>Date</label>
-				<input id="datepicker" name="date" type="text" required>
+				<input id="datepicker" name="date" type="text" <?php echo 'value="'.$shoe["date"].'"'; ?> required>
 			  </div>
 			</div>
 		  </fieldset>
