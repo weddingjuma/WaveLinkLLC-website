@@ -9,6 +9,7 @@
 	  <li><a href="/foamlife/admin/homepage/" <?php if (false === strpos($url,'homepage')) { echo 'class="active"'; } ?>>Content</a></li>
 	  <li><a href="/foamlife/admin/contact/" <?php if (false === strpos($url,'clients')) { echo 'class="active"'; } ?>>Contacts</a></li>
 	  <li><a href="/foamlife/admin/shoes/" <?php if (false === strpos($url,'products')) { echo 'class="active"'; } ?>>Shoes</a></li>
+      <li><a href="/foamlife/admin/notifications/" <?php if (false === strpos($url,'notifications')) { echo 'class="active"'; } ?>>Notifications</a></li>
 	  <li><a href="/foamlife/admin/seo/" <?php if (false === strpos($url,'seo')) { echo 'class="active"'; } ?>>SEO</a></li>
 	  <li><a href="/foamlife/admin/logout.php" style="color:#e74c3c;">Logout</a></li>
 	</ul>
