@@ -148,7 +148,7 @@
 	<script>
 		jQuery('#datepicker').datetimepicker({
 			timepicker:false,
-			format:'m-d-Y'
+			format:'Y-m-d'
 		});
 	</script>
 </body>
