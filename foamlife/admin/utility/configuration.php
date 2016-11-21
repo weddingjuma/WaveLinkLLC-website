@@ -1,6 +1,6 @@
 <?php
 
-	$site_name = "Foamlife"; // Website name
+	$site_name = "FoamBook"; // Website name
 
 	$database_host = "localhost"; // Mysql host name
 	$database_username = "application"; // Mysql username

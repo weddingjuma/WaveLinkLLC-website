@@ -63,7 +63,7 @@
 							category_2 LIKE '$search' OR
 							category_3 LIKE '$search'";
 					}
-					$query = $query.' ORDER BY id ASC';
+					$query = $query.' ORDER BY date ASC';
 					$data = mysqli_query($datebase_connection, $query) or die(mysql_error());
 					while ($shoe = mysqli_fetch_array($data, MYSQL_ASSOC)) {
 						echo
