@@ -65,25 +65,27 @@
 			</div>
 		  </fieldset>
           <fieldset>
-			<legend>Categories</legend>
+			<legend>Keywords</legend>
 			<div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
-				<label>Category 1</label>
-				<input class="form-control" type="text" name="category1" <?php echo 'value="'.$shoe["category_1"].'"'; ?>>
+				<label>Suggested Shoe Keyword</label>
+				<input class="form-control" type="text" name="category_1" <?php echo 'value="'.$shoe["category_1"].'"'; ?>>
 			  </div>
             </div>
             <div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
-				<label>Category 2</label>
-				<input class="form-control" type="text" name="category2" <?php echo 'value="'.$shoe["category_2"].'"'; ?>>
+				<label>Matching Apparel Keyword</label>
+				<input class="form-control" type="text" name="category_2" <?php echo 'value="'.$shoe["category_2"].'"'; ?>>
 			  </div>
             </div>
+            <!--
             <div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
 				<label>Category 3</label>
-				<input class="form-control" type="text" name="category3" <?php echo 'value="'.$shoe["category_3"].'"'; ?>>
+				<input class="form-control" type="text" name="category_3" <?php echo 'value="'.$shoe["category_3"].'"'; ?>>
 			  </div>
 			</div>
+            -->
 		  </fieldset>
           <fieldset>
 			<legend>Images</legend>
@@ -94,6 +96,7 @@
 				<input class="form-control" type="file" name="file[]">
 				<input class="form-control" type="hidden" name="image_url_1" <?php echo 'value="'.$shoe["image_url_1"].'"'; ?>>
 			  </div>
+              <!--
 			  <div class="col-md-3 col-xs-3">
 				<label>Image 2</label>
 				<img style="width:100%;" src="<?php if ($shoe["image_url_2"] <> "") { echo 'http://'.$_SERVER['SERVER_NAME'].'/foamlife'.$shoe["image_url_2"]; } ?>" />
@@ -106,6 +109,7 @@
 				<input class="form-control" type="file" name="file[]">
 				<input class="form-control" type="hidden" name="image_url_3" <?php echo 'value="'.$shoe["image_url_3"].'"'; ?>>
 			  </div>
+              -->
 			</div>
 		  </fieldset>
 		  <fieldset>
@@ -118,7 +122,7 @@
             </div>
             <div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
-				<label>Footlocker URL</label>
+				<label>Kixify URL</label>
 				<input class="form-control" type="text" name="footlockerUrl" <?php echo 'value="'.$shoe["footlocker_url"].'"'; ?>>
 			  </div>
 			</div>

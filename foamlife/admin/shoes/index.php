@@ -45,7 +45,7 @@
 					<th>Image</th>
 					<th>Name/Color</th>
 					<th>Date</th>
-					<th>Category(s)</th>
+					<th>Keyword(s)</th>
 					<th>Enabled?</th>
 					<th>Action</th>
 				</tr>

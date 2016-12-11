@@ -8,9 +8,9 @@
     $color = addslashes($_POST['color']);
 	$description = addslashes($_POST['description']);
 	$date = date('Y-m-d H:i:s', strtotime($_POST['date']));
-	$category_1 = $_POST['category_1'];
-	$category_2 = $_POST['category_2'];
-	$category_3 = $_POST['category_3'];
+	$category_1 = addslashes($_POST['category_1']);
+	$category_2 = addslashes($_POST['category_2']);
+	$category_3 = addslashes($_POST['category_3']);
 	$image_url_1 = $_POST['image_url_1']; if ($image_url_1 == "") { $image_url_1 = null; }
 	$image_url_2 = $_POST['image_url_2']; if ($image_url_2 == "") { $image_url_2 = null; }
 	$image_url_3 = $_POST['image_url_3']; if ($image_url_3 == "") { $image_url_3 = null; }
