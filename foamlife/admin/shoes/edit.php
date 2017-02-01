@@ -136,6 +136,12 @@
 				 <input name="enabled" type="checkbox" <?php if($shoe["enabled"] == true) { echo 'checked'; } ?>>
 			    </div>
 			  </div>
+              <div class="col-md-2 col-xs-2">
+				<label>Hide Day?</label><br />
+			    <div class="switch">
+				 <input name="hide_day" type="checkbox" <?php if($shoe["hide_day"] == true) { echo 'checked'; } ?>>
+			    </div>
+			  </div>
 			</div>
 		  </fieldset>
 		  <div class="form-actions">
