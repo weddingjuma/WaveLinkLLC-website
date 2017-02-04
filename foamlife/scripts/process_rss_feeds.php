@@ -68,11 +68,11 @@
                             curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
                             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 
-                            //$response = curl_exec($ch);
-                            //curl_close($ch);
+                            $response = curl_exec($ch);
+                            curl_close($ch);
 
-                            //$return["allresponses"] = $response;
-                            //$return = json_encode($return);
+                            $return["allresponses"] = $response;
+                            $return = json_encode($return);
                         } else {
                             echo mysqli_error($database_connection);
                         }
