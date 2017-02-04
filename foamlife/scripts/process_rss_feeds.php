@@ -53,7 +53,7 @@
                             $push_contents = array("en" => $notification_message);
                             $post_fields = array(
                                 'app_id' => "6a2513bf-3303-4d5c-bde4-15d9a956be28",
-                                'included_segments' => array('Testing Users'),
+                                'included_segments' => array('All'), // 'All', 'Testing Users'
                                 //'data' => array("foo" => "bar"),
                                 'contents' => $push_contents
                             );
