@@ -117,13 +117,13 @@
 			<div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
 				<label>eBay URL</label>
-				<input class="form-control" type="text" name="ebayUrl" <?php echo 'value="'.$shoe["ebay_url"].'"'; ?>>
+				<input class="form-control" type="text" name="ebay_url" <?php echo 'value="'.$shoe["ebay_url"].'"'; ?>>
 			  </div>
             </div>
             <div class="row form-group">
 			  <div class="col-md-12 col-xs-12">
 				<label>Kixify URL</label>
-				<input class="form-control" type="text" name="footlockerUrl" <?php echo 'value="'.$shoe["footlocker_url"].'"'; ?>>
+				<input class="form-control" type="text" name="footlocker_url" <?php echo 'value="'.$shoe["footlocker_url"].'"'; ?>>
 			  </div>
 			</div>
 		  </fieldset>
