@@ -126,6 +126,24 @@
 				<input class="form-control" type="text" name="footlocker_url" <?php echo 'value="'.$shoe["footlocker_url"].'"'; ?>>
 			  </div>
 			</div>
+            <div class="row form-group">
+			  <div class="col-md-12 col-xs-12">
+				<label>Ebay Apparel URL</label>
+				<input class="form-control" type="text" name="ebay_apparel_url" <?php echo 'value="'.$shoe["ebay_apparel_url"].'"'; ?>>
+			  </div>
+			</div>
+            <div class="row form-group">
+			  <div class="col-md-12 col-xs-12">
+				<label>Sneaker Threads URL</label>
+				<input class="form-control" type="text" name="sneaker_threads_url" <?php echo 'value="'.$shoe["sneaker_threads_url"].'"'; ?>>
+			  </div>
+			</div>
+            <div class="row form-group">
+			  <div class="col-md-12 col-xs-12">
+				<label>My Fitteds URL</label>
+				<input class="form-control" type="text" name="my_fitteds_url" <?php echo 'value="'.$shoe["my_fitteds_url"].'"'; ?>>
+			  </div>
+			</div>
 		  </fieldset>
 		  <fieldset>
 			<legend>Control</legend>
@@ -134,6 +152,12 @@
 				<label>Enabled?</label><br />
 			    <div class="switch">
 				 <input name="enabled" type="checkbox" <?php if($shoe["enabled"] == true) { echo 'checked'; } ?>>
+			    </div>
+			  </div>
+              <div class="col-md-2 col-xs-2">
+				<label>Hide Month?</label><br />
+			    <div class="switch">
+				 <input name="hide_month" type="checkbox" <?php if($shoe["hide_month"] == true) { echo 'checked'; } ?>>
 			    </div>
 			  </div>
               <div class="col-md-2 col-xs-2">

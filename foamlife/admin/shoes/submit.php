@@ -16,6 +16,10 @@
 	$image_url_3 = $_POST['image_url_3']; if ($image_url_3 == "") { $image_url_3 = null; }
     $ebay_url = addslashes($_POST['ebay_url']);
 	$footlocker_url = addslashes($_POST['footlocker_url']);
+    $ebay_apparel_url = addslashes($_POST['ebay_apparel_url']);
+    $sneaker_threads_url = addslashes($_POST['sneaker_threads_url']);
+    $my_fitteds_url = addslashes($_POST['my_fitteds_url']);
+    $hide_month = isset($_POST['hide_month']) && $_POST['hide_month'] ? 1 : 0;
     $hide_day = isset($_POST['hide_day']) && $_POST['hide_day'] ? 1 : 0;
     $enabled = isset($_POST['enabled']) && $_POST['enabled'] ? 1 : 0;
 
@@ -35,14 +39,14 @@
 	}
 
 	if ($id == "") {
-		if (mysqli_query($database_connection, "insert into shoes(name, color, description, date, category_1, category_2, category_3, image_url_1, image_url_2, image_url_3, ebay_url, footlocker_url, hide_day, enabled)
-						                        values('$name', '$color', '$description', '$date', '$category_1', '$category_2', '$category_3', '$image_filenames[0]', '$image_filenames[1]', '$image_filenames[2]', '$ebay_url', '$footlocker_url', '$hide_day', '$enabled')")){
+		if (mysqli_query($database_connection, "insert into shoes(name, color, description, date, category_1, category_2, category_3, image_url_1, image_url_2, image_url_3, ebay_url, footlocker_url, ebay_apparel_url, sneaker_threads_url, my_fitteds_url, hide_month, hide_day, enabled)
+						                        values('$name', '$color', '$description', '$date', '$category_1', '$category_2', '$category_3', '$image_filenames[0]', '$image_filenames[1]', '$image_filenames[2]', '$ebay_url', '$footlocker_url', '$ebay_apparel_url', '$sneaker_threads_url', '$my_fitteds_url' '$hide_month', '$hide_day', '$enabled')")){
 			header("Location: index.php");
 		} else {
 			echo '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/error.png" style="height:20px;" />&nbsp;&nbsp;Database problem.<br>Contact wavelinkllc.com administrator. '.mysqli_error($database_connection);
 		}
 	} else {
-		if (mysqli_query($database_connection, "update shoes set name = '$name', color = '$color', description = '$description', date = '$date', category_1 = '$category_1', category_2 = '$category_2', category_3 = '$category_3', image_url_1 = '$image_filenames[0]', image_url_2 = '$image_filenames[1]', image_url_3 = '$image_filenames[2]', ebay_url = '$ebay_url', footlocker_url = '$footlocker_url', hide_day = '$hide_day', enabled = '$enabled' where id = '$id'")){
+		if (mysqli_query($database_connection, "update shoes set name = '$name', color = '$color', description = '$description', date = '$date', category_1 = '$category_1', category_2 = '$category_2', category_3 = '$category_3', image_url_1 = '$image_filenames[0]', image_url_2 = '$image_filenames[1]', image_url_3 = '$image_filenames[2]', ebay_url = '$ebay_url', footlocker_url = '$footlocker_url', ebay_apparel_url = '$ebay_apparel_url', sneaker_threads_url = '$sneaker_threads_url', my_fitteds_url = '$my_fitteds_url', hide_month = '$hide_month', hide_day = '$hide_day', enabled = '$enabled' where id = '$id'")){
 			header("Location: index.php");
 		} else {
 			echo '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/error.png" style="height:20px;" />&nbsp;&nbsp;Database problem.<br>Contact wavelinkllc.com administrator. '.mysqli_error($database_connection);
