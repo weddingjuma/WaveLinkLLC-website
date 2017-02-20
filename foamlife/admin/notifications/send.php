@@ -5,6 +5,7 @@
 	$database_connection = connect_to_database();
 
     $text = $_POST['text'];
+    $url = $_POST['url'];
 
     $content = array(
         "en" => $text
@@ -12,14 +13,14 @@
 
     $fields = array(
         'app_id' => "6a2513bf-3303-4d5c-bde4-15d9a956be28",
-        'included_segments' => array('All'),
-        //'data' => array("foo" => "bar"),
+        'included_segments' => array('Testing Users'), // 'All', 'Testing Users'
+        'data' => array("url" => "$url"),
         'contents' => $content
     );
 
     $fields = json_encode($fields);
-    //print("\nJSON sent:\n");
-    //print($fields);
+    // print("\nJSON sent:\n");
+    // print($fields);
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");

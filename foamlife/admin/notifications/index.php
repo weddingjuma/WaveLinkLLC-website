@@ -28,6 +28,12 @@
 				<label>Send an iOS push notification (160 chars. max):</label>
 				<textarea class="form-control" name="text" id="text" rows="5" required></textarea>
 			  </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 col-xs-12">
+				<label>Optional URL (include 'http' or 'https'):</label>
+                <input class="form-control" type="text" name="url" />
+			  </div>
 			</div>
             <div id="response"></div>
 			<div class="form-actions">
