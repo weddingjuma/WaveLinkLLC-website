@@ -13,7 +13,7 @@
 
     $fields = array(
         'app_id' => "6a2513bf-3303-4d5c-bde4-15d9a956be28",
-        'included_segments' => array('Testing Users'), // 'All', 'Testing Users'
+        'included_segments' => array('All'), // 'All', 'Testing Users'
         'data' => array("url" => "$url"),
         'contents' => $content
     );
