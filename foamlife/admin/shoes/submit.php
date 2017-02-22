@@ -40,7 +40,7 @@
 
 	if ($id == "") {
 		if (mysqli_query($database_connection, "insert into shoes(name, color, description, date, category_1, category_2, category_3, image_url_1, image_url_2, image_url_3, ebay_url, footlocker_url, ebay_apparel_url, sneaker_threads_url, my_fitteds_url, hide_month, hide_day, enabled)
-						                        values('$name', '$color', '$description', '$date', '$category_1', '$category_2', '$category_3', '$image_filenames[0]', '$image_filenames[1]', '$image_filenames[2]', '$ebay_url', '$footlocker_url', '$ebay_apparel_url', '$sneaker_threads_url', '$my_fitteds_url' '$hide_month', '$hide_day', '$enabled')")){
+						                        values('$name', '$color', '$description', '$date', '$category_1', '$category_2', '$category_3', '$image_filenames[0]', '$image_filenames[1]', '$image_filenames[2]', '$ebay_url', '$footlocker_url', '$ebay_apparel_url', '$sneaker_threads_url', '$my_fitteds_url', '$hide_month', '$hide_day', '$enabled')")){
 			header("Location: index.php");
 		} else {
 			echo '<img src="http://'.$_SERVER['SERVER_NAME'].'/images/error.png" style="height:20px;" />&nbsp;&nbsp;Database problem.<br>Contact wavelinkllc.com administrator. '.mysqli_error($database_connection);
