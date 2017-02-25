@@ -54,7 +54,7 @@
                             $post_fields = array(
                                 'app_id' => "6a2513bf-3303-4d5c-bde4-15d9a956be28",
                                 'included_segments' => array('All'), // 'All', 'Testing Users'
-                                //'data' => array("foo" => "bar"),
+                                'data' => array("url" => ""),
                                 'contents' => $push_contents
                             );
                             $post_fields = json_encode($post_fields);
