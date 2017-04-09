@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\PHP\v5.6\php-cgi.exe" -f "C:\inetpub\wwwroot\WaveLinkLLC\foamlife\scripts\process_rss_feeds.php"
