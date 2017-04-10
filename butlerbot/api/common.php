@@ -1,15 +1,18 @@
 <?php
     $ERROR_CODES = array(
-        "DATABASE_PROBLEM" => 1,
-        "EMAIL_TAKEN" => 2,
-        "INVALID_CREDENTIALS" => 3
+        "NONE" => 0,
+        "SERVER_PROBLEM" => 1,
+        "DATABASE_PROBLEM" => 2,
+        "EMAIL_TAKEN" => 3,
+        "PHONE_TAKEN" => 4,
+        "INVALID_CREDENTIALS" => 5
     );
 
 	function connect_to_database() {
 		$host = "localhost";
 		$username = "application";
 		$password = "wavelink2014";
-		$database_name = "butlerbot";
+		$database_name = "butler_bot";
 		$database_connection = mysqli_connect("$host", "$username", "$password", "$database_name")or die("Cannot connect to database.");
 		mysqli_set_charset($database_connection, "utf8mb4");
 		return $database_connection;

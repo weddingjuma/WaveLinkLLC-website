@@ -1,10 +1,14 @@
 <?php
-	include 'functions.php';
+    //ini_set('display_errors', 1);
+    //ini_set('display_startup_errors', 1);
+    //error_reporting(E_ALL);
+
+	include 'common.php';
 	$database_connection = connect_to_database();
 
     $email_address = $_POST['email_address'];
     $phone_number = $_POST['phone_number'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $first_name = addslashes($_POST['first_name']);
     $last_name = addslashes($_POST['last_name']);
     $wifi_alert_interval_hours = ($_POST['wifi_alert_interval_hours'] <> "" ? $_POST['wifi_alert_interval_hours'] : "1");
@@ -14,6 +18,9 @@
     if (mysqli_num_rows(mysqli_query($database_connection, "SELECT email_address FROM users WHERE email_address = '$email_address'"))) {
         $response['success'] = false;
         $response['error_code'] = $ERROR_CODES['EMAIL_TAKEN'];
+    } else if (mysqli_num_rows(mysqli_query($database_connection, "SELECT phone_number FROM users WHERE phone_number = '$phone_number'"))) {
+        $response['success'] = false;
+        $response['error_code'] = $ERROR_CODES['PHONE_TAKEN'];
 	} else if (mysqli_query($database_connection, "INSERT INTO users(email_address, phone_number, password, first_name, last_name, wifi_alert_interval_hours) VALUES('$email_address', '$phone_number', '$password', '$first_name', '$last_name', '$wifi_alert_interval_hours')")) {
 		$response['success'] = true;
         $id = mysqli_insert_id($database_connection);
