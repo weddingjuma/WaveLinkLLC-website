@@ -6,8 +6,9 @@
 	include 'common.php';
 	$database_connection = connect_to_database();
 
-    $email_or_phone = $_POST['email_or_phone'];
-    $password = $_POST['password'];
+    $POST = json_decode(trim(file_get_contents("php://input")), true);
+    $email_or_phone = $POST['email_or_phone'];
+    $password = $POST['password'];
 
     $response = array();
 

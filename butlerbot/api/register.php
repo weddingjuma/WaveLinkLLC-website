@@ -6,12 +6,13 @@
 	include 'common.php';
 	$database_connection = connect_to_database();
 
-    $email_address = $_POST['email_address'];
-    $phone_number = $_POST['phone_number'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $first_name = addslashes($_POST['first_name']);
-    $last_name = addslashes($_POST['last_name']);
-    $wifi_alert_interval_hours = ($_POST['wifi_alert_interval_hours'] <> "" ? $_POST['wifi_alert_interval_hours'] : "1");
+    $POST = json_decode(trim(file_get_contents("php://input")), true);
+    $email_address = $POST['email_address'];
+    $phone_number = $POST['phone_number'];
+    $password = password_hash($POST['password'], PASSWORD_DEFAULT);
+    $first_name = addslashes($POST['first_name']);
+    $last_name = addslashes($POST['last_name']);
+    $wifi_alert_interval_hours = ($POST['wifi_alert_interval_hours'] <> "" ? $POST['wifi_alert_interval_hours'] : "1");
 
     $response = array();
 
