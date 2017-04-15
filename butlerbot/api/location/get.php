@@ -3,7 +3,7 @@
     //ini_set('display_startup_errors', 1);
     //error_reporting(E_ALL);
 
-	include 'common.php';
+	include '../common.php';
 	$database_connection = connect_to_database();
 
     $user_id = $_GET['user_id'];
