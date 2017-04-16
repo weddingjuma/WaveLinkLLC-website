@@ -1,25 +1,24 @@
 <?php
+    $ERROR_CODES = array(
+        "NONE" => 0,
+        "SERVER_PROBLEM" => 1,
+        "DATABASE_PROBLEM" => 2,
+        "EMAIL_TAKEN" => 3,
+        "PHONE_TAKEN" => 4,
+        "INVALID_CREDENTIALS" => 5
+    );
+
 	function connect_to_database() {
 		$host = "localhost";
 		$username = "application";
 		$password = "wavelink2014";
-		$database_name = "foamlife";
+		$database_name = "butler_bot";
 		$database_connection = mysqli_connect("$host", "$username", "$password", "$database_name")or die("Cannot connect to database.");
 		mysqli_set_charset($database_connection, "utf8mb4");
 		return $database_connection;
 	}
 
-	function get_settings($c, $sql) {
-		$settings = mysqli_query($c, "SELECT * FROM settings");
-		if (!$settings) { echo 'Could not load settings data.'; exit; }
-		$setting = array();
-		while($row = mysqli_fetch_assoc($settings)) {
-			$setting[$row['code']] = $row['value'];
-		}
-		return $setting;
-	}
-
-	function mysqli_result($mysqli, $sql) {
+    function mysqli_result($mysqli, $sql) {
 	    $result = $mysqli->query($sql);
 	    $value = $result->fetch_array(MYSQLI_NUM);
 	    return is_array($value) ? $value[0] : "";
