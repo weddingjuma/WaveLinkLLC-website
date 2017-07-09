@@ -25,6 +25,10 @@ button:hover {
 	border: 1px solid #616d7b !important;
 }
 
+.fa {
+    color: #326FB3;
+}
+
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #515151;
 }
@@ -76,6 +80,7 @@ button:hover {
     height: 100px;
     margin: 0px;
     padding: 15px;
+    text-align: center;
 }
 
 .navigation_bar_logo img {

@@ -20,7 +20,7 @@
         </div>
         <div class="col-xs-hide col-md-4 navigation_bar_logo">
             <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">
-                <img src="https://webtemple-tdlabltd.netdna-ssl.com/wp-content/blogs.dir/100/files/2016/10/BHL_Logo-286x70.png" /> <!-- <?php //echo $setting['logo']; ?>  -->
+                <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/images/logo.png" /> <!-- <?php //echo $setting['logo']; ?>  -->
             </a>
         </div>
         <div class="col-xs-hide col-md-4 navigation_bar_right">
@@ -34,7 +34,7 @@
                 <tr>
                     <td class="navigation_bar_logo">
                         <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">
-                            <img src="https://webtemple-tdlabltd.netdna-ssl.com/wp-content/blogs.dir/100/files/2016/10/BHL_Logo-286x70.png" /> <!-- <?php //echo $setting['logo']; ?>  -->
+                            <img src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/images/logo.png" /> <!-- <?php //echo $setting['logo']; ?>  -->
                         </a>
                     </td>
                     <td class="navigation_bar_right" onclick="toggle_navigation_panel();">
