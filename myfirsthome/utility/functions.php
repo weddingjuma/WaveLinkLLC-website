@@ -126,4 +126,8 @@ EOF;
       return true;
     }
 
+    function responsive_space($is_mobile) {
+        return $is_mobile ? "<br />" : "&nbsp;&nbsp;";
+    }
+
 ?>

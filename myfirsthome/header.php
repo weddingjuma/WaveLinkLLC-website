@@ -15,7 +15,7 @@
         <div class="col-xs-hide col-md-4 navigation_bar_left">
             <div class="navigation_link">
                 <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/about/">About</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
         </div>
         <div class="col-xs-hide col-md-4 navigation_bar_logo">
@@ -25,8 +25,8 @@
         </div>
         <div class="col-xs-hide col-md-4 navigation_bar_right">
             <div class="navigation_link">
-                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Mortgage Calculator</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Contact</a>
+                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/calculator/">Mortgage Calculator</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/contact/">Contact</a>
             </div>
         </div>
         <div class="col-xs-12 col-md-hide">
@@ -48,9 +48,9 @@
 <div id="menu" class="menu">
 	<div class="row">
 		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Home</a></div>
-		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">About</a></div>
-		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Mortgage Calculator</a></div>
-		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Contact</a></div>
+		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/about/">About</a></div>
+		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/calculator/">Mortgage Calculator</a></div>
+		<div class="col-xs-12 col-md-hide menu_link"><a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/contact/">Contact</a></div>
 	</div>
 </div>
 <script>

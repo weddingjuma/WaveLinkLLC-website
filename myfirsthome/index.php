@@ -138,8 +138,8 @@
     <div class="row banner" style="background-image: url('http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/images/background1.jpg');"> <!-- <?php //echo $setting['feature1_photo']; ?> -->
         <div class="banner_tent"></div>
 		<div class="col-xs-1 col-md-4"></div>
-        <div class="col-xs-10 col-md-4">
-			<button class="banner_button">Contact us to get started!</button>
+        <div class="col-xs-10 col-md-4" style="text-align: center;">
+			<a class="banner_button" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/contact/">Contact us to get started!</a>
 		</div>
         <div class="col-xs-1 col-md-4"></div>
 	</div>

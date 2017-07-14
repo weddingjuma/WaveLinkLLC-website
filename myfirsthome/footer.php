@@ -11,9 +11,9 @@
         <div class="col-xs-12 col-md-3 footer_section">
             <div class="footer_title">Map</div>
             <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Home</a><br />
-            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">About</a><br />
-            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Mortgage Calculator</a><br />
-            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/">Contact</a>
+            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/about/">About</a><br />
+            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/calculator/">Mortgage Calculator</a><br />
+            <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/myfirsthome/contact/">Contact</a>
         </div>
         <div class="col-xs-12 col-md-3 footer_section">
             <div class="footer_title">Social</div>
