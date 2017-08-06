@@ -91,13 +91,13 @@
     <div class="container">
         <div class="row ads">
             <div class="col-xs-12 col-md-6 ad" onclick="location.href='/americanlegion'">
-                <div class="ad_image" style="background-image:url('/americanlegion/images/event1.jpg');">
+                <div class="ad_image" style="background-image:url('/americanlegion/images/ad1.jpg');">
                     <div class="ad_button">More</div>
                     <div class="ad_title">Member Benefits</div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-6 ad" onclick="location.href='/americanlegion'">
-                <div class="ad_image" style="background-image:url('/americanlegion/images/event1.jpg');">
+                <div class="ad_image" style="background-image:url('/americanlegion/images/ad2.jpg');">
                     <div class="ad_button">More</div>
                     <div class="ad_title">Baseball</div>
                 </div>

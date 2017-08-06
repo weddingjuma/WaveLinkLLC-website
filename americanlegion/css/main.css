@@ -426,11 +426,11 @@ textarea {
     padding: 15px;
 	font-size: 12px;
     line-height: 22px;
-    border-top: 3px solid #E6E6E6;
+    background-color: #40505e;
 }
 
 .footer_section {
-    padding: 0px;
+    padding: 0px 0px 20px 0px;
 }
 
 .footer_title {
